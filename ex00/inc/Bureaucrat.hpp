@@ -23,12 +23,27 @@ class Bureaucrat
 		std::string	getName() const;
 		unsigned int	getGrade() const;
 
+		/* -- Setter -- */
+		void	setGrade(unsigned int grade);
+
 		/* -- Destructors -- */
 		~Bureaucrat();
 
 		/* -- Member function -- */
 		void	incrementGrade();
 		void	decrementGrade();
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
 };
 
 /* -- Overload operator ostream -- */

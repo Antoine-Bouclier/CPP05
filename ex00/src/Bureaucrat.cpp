@@ -6,6 +6,18 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
+	try
+	{
+		this->setGrade(grade);
+	}
+	catch(const GradeTooHighException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch(const GradeTooLowException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name), _grade(copy._grade)
@@ -35,6 +47,16 @@ unsigned int	Bureaucrat::getGrade() const
 	return (this->_grade);
 }
 
+void	Bureaucrat::setGrade(unsigned int grade)
+{
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	else
+		this->_grade = grade;
+}
+
 void	Bureaucrat::incrementGrade()
 {
 	if (this->_grade > 1)
@@ -45,6 +67,16 @@ void	Bureaucrat::decrementGrade()
 {
 	if (this->_grade < 150)
 		this->_grade++;
+}
+
+const char*	Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+
+const char*	Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too high");
 }
 
 Bureaucrat::~Bureaucrat()
