@@ -12,19 +12,25 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name), _grade(copy.
 {
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src)
+Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &src)
 {
 	if (this != &src)
 		this->_grade = src._grade;
 	return (*this);
 }
 
-const std::string	Bureaucrat::getName() const
+std::ostream&	operator<<(std::ostream& os, const Bureaucrat& b)
+{
+	os << b.getName() << ", bureaucrat grade " << b.getGrade();
+	return (os);
+}
+
+std::string	Bureaucrat::getName() const
 {
 	return (this->_name);
 }
 
-const unsigned int	Bureaucrat::getGrade() const
+unsigned int	Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }

@@ -20,8 +20,8 @@ class Bureaucrat
 		Bureaucrat& operator=(const Bureaucrat &src);
 
 		/* -- Getters -- */
-		const std::string	getName() const;
-		const unsigned int	getGrade() const;
+		std::string	getName() const;
+		unsigned int	getGrade() const;
 
 		/* -- Destructors -- */
 		~Bureaucrat();
@@ -31,7 +31,8 @@ class Bureaucrat
 		void	decrementGrade();
 };
 
-
+/* -- Overload operator ostream -- */
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 
 
 #endif
