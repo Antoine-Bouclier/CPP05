@@ -2,15 +2,26 @@
 
 int	main(void)
 {
-	Bureaucrat	b1;
-	Bureaucrat	b2("John", 200);
-	Bureaucrat	b3(b2);
+	try
+	{
+		Bureaucrat	b1("John", 200);
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
 
-	std::cout << b1 << std::endl;
-	std::cout << b2 << std::endl;
-	std::cout << b3 << std::endl;
+	try
+	{
+		Bureaucrat	b2;
+		b2.decrementGrade();
+		std::cout << b2.getGrade() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
 
-	b1.decrementGrade();
-
-	std::cout << b1 << std::endl;
+	std::cout << "Nice!" << std::endl;
+	return (0);
 }
