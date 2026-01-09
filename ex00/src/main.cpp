@@ -2,6 +2,7 @@
 
 int	main(void)
 {
+	std::cout << "TEST 1: grade above 150" << std::endl;
 	try
 	{
 		Bureaucrat	b1("John", 200);
@@ -11,6 +12,7 @@ int	main(void)
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 
+	std::cout << "TEST 2: decrement grade" << std::endl;
 	try
 	{
 		Bureaucrat	b2;
@@ -22,6 +24,17 @@ int	main(void)
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "Nice!" << std::endl;
+	std::cout << "TEST 3: increment grade" << std::endl;
+	try
+	{
+		Bureaucrat	b3("Romain", 1);
+		b3.incrementGrade();
+		std::cout << b3.getGrade() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	
 	return (0);
 }
