@@ -3,11 +3,11 @@
 
 class PresidentialPardonForm
 {
-private:
-	/* data */
-public:
-	PresidentialPardonForm(/* args */);
-	~PresidentialPardonForm();
+	private:
+		
+	public:
+		PresidentialPardonForm();
+		~PresidentialPardonForm();
 };
 
 #endif
