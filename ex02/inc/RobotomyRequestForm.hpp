@@ -3,11 +3,11 @@
 
 class RobotomyRequestForm
 {
-private:
-	/* data */
-public:
-	RobotomyRequestForm(/* args */);
-	~RobotomyRequestForm();
+	private:
+		
+	public:
+		RobotomyRequestForm();
+		~RobotomyRequestForm();
 };
 
 #endif
