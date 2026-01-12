@@ -44,7 +44,7 @@ void	Bureaucrat::setGrade(unsigned int grade)
 {
 	if (grade < 1)
 		throw GradeTooHighException();
-	else if (grade > 150)
+	else if (grade > 150) 
 		throw GradeTooLowException();
 	else
 		this->_grade = grade;
@@ -66,7 +66,7 @@ void	Bureaucrat::decrementGrade()
 		this->_grade++;
 }
 
-void	Bureaucrat::signForm(Form f)
+void	Bureaucrat::signForm(Form &f)
 {
 	try
 	{
@@ -78,7 +78,7 @@ void	Bureaucrat::signForm(Form f)
 			<< this->getName() << " couldn't sign "
 			<< f.getName() << " because "
 			<< this->getName() << " have a grade of "
-			<< this->getGrade() << "and need a "
+			<< this->getGrade() << " and need a "
 			<< f.getSignGrade() << " grade." <<
 		std::endl;
 	}

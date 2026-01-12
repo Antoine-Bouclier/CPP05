@@ -2,16 +2,27 @@
 
 Form::Form() : _name("default"), _sign_grade(15), _execute_grade(), _signed(false)
 {
+	std::cout << this->_name << ": Default constructor called." << std::endl;
 }
 
 Form::Form(std::string name, unsigned int sign_grade, unsigned int execute_grade)
  : _name(name), _sign_grade(sign_grade), _execute_grade(execute_grade), _signed(false)
 {
+	std::cout << this->_name << ": Parameterized constructor called." << std::endl;
+	if (_sign_grade >= 150)
+		throw GradeTooLowException();
+	else if (_sign_grade <= 1)
+		throw GradeTooHighException();
+	if (_execute_grade >= 150)
+		throw GradeTooLowException();
+	else if (_execute_grade <= 1)
+		throw GradeTooHighException();
 }
 
 Form::Form(const Form &copy)
 : _name(copy._name), _sign_grade(copy._sign_grade), _execute_grade(copy._execute_grade), _signed(copy._signed)
 {
+	std::cout << this->_name << ": Copy constructor called." << std::endl;
 }
 
 Form& Form::operator=(const Form &src)
@@ -66,12 +77,13 @@ std::ostream&	operator<<(std::ostream& os, const Form& f)
 		<< "Grade to sign the form: " << f.getSignGrade() << "\n"
 		<< "Grade to execute the form: " << f.getExecuteGrade() << "\n";
 	if (f.getSigned())
-		os << "form is not signed yet";
+		os << "Form is already signed";
 	else
-		os << "form is already signed";
+		os << "Form is not signed yet";
 	return (os);
 }
 
 Form::~Form()
 {
+	std::cout << this->_name << ": Destructor called." << std::endl;
 }
