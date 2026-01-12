@@ -3,11 +3,11 @@
 
 class ShrubberyCreationForm
 {
-private:
-	/* data */
-public:
-	ShrubberyCreationForm(/* args */);
-	~ShrubberyCreationForm();
+	private:
+
+	public:
+		ShrubberyCreationForm();
+		~ShrubberyCreationForm();
 };
 
 #endif
