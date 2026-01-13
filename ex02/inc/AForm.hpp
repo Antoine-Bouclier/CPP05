@@ -5,7 +5,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		const std::string	_name;
@@ -14,14 +14,14 @@ class Form
 		bool				_signed;
 	public:
 		/* -- Constructors -- */
-		Form();
-		Form(std::string name, unsigned int sign_grade, unsigned int execute_grade);
+		AForm();
+		AForm(std::string name, unsigned int sign_grade, unsigned int execute_grade);
 		
 		/* -- Copy Constructor -- */
-		Form(const Form &copy);
+		AForm(const AForm &copy);
 
 		/* -- Assignement operator -- */
-		Form& operator=(const Form &src);
+		AForm& operator=(const AForm &src);
 
 		/* -- Getters -- */
 		std::string		getName() const;
@@ -33,7 +33,7 @@ class Form
 		void	beSigned(Bureaucrat b);
 
 		/* -- Destructor called. -- */
-		virtual ~Form();
+		virtual ~AForm();
 
 		class GradeTooHighException : public std::exception
 		{
