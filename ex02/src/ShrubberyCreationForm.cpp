@@ -21,3 +21,36 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
+
+std::string	ShrubberyCreationForm::getTarget() const
+{
+	return (this->_target);
+}
+
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+{
+	if (executor.getGrade() > this->getExecuteGrade())
+		throw	(Bureaucrat::GradeTooLowException());
+	else if (!this->getSigned())
+		throw	(FormNotSigned());
+	else
+	{
+		std::ofstream file(this->getTarget().append("_shrubbery"));
+
+		file << 
+			"		 &&" << std::endl <<
+			"	    &&&&" << std::endl <<
+			"	  &&&&&&&&" << std::endl <<
+			"   &&&&&&&&&&&&" << std::endl <<
+			"		&&&&" << std::endl <<
+			"	  &&&&&&&&" << std::endl <<
+			"	&&&&&&&&&&&&" << std::endl <<
+			" &&&&&&&&&&&&&&&&" << std::endl <<
+			"       ||||" << std::endl <<
+			"       ||||" << std::endl <<
+			"       ||||" << std::endl <<
+		std::endl;
+
+		file.close();
+	}
+}
