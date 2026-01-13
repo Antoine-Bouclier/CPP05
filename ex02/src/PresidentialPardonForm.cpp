@@ -29,5 +29,5 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	else if (!this->getSigned())
 		throw	(FormNotSigned());
 	else
-		std::cout << this->_target << "has been pardoned by Zaphod Beeblebrox." << std::endl;
+		std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

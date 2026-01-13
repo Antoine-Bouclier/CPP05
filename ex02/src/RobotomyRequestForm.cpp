@@ -19,18 +19,23 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 	return (*this);
 }
 
+std::string	RobotomyRequestForm::getTarget() const
+{
+	return (this->_target);
+}
+
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	if (executor.getGrade() > this->getExecuteGrade())
-		throw	(Bureaucrat::GradeTooLowException());
-	else if (!this->getSigned())
+	if (!this->getSigned())
 		throw	(FormNotSigned());
+	else if (executor.getGrade() > this->getExecuteGrade())
+		throw	(Bureaucrat::GradeTooLowException());
 	else if (rand() % 2)
-		std::cout << "Drilling noises/n" << this->_target << " has been robotomized" << std::endl;
+		std::cout << "Drilling noises\n" << this->_target << " has been robotomized" << std::endl;
 	else
-		std::cout << this->_target << " robotomy failed." << std::endl;
+		std::cout << this->getTarget() << " robotomy failed." << std::endl;
 }

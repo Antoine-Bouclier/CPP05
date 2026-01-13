@@ -32,6 +32,8 @@ class AForm
 		/* -- Member function -- */
 		void	beSigned(Bureaucrat b);
 
+		virtual void	execute(Bureaucrat const &executor) const = 0;
+
 		/* -- Destructor called. -- */
 		virtual ~AForm();
 
@@ -56,6 +58,6 @@ class AForm
 
 
 /* -- Overload operator ostream -- */
-std::ostream& operator<<(std::ostream& os, const Form& f);
+std::ostream& operator<<(std::ostream& os, const AForm& f);
 
 #endif

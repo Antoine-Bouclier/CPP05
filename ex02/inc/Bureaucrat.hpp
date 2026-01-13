@@ -4,7 +4,7 @@
 #include <iostream>
 #include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -36,6 +36,7 @@ class Bureaucrat
 		void	incrementGrade();
 		void	decrementGrade();
 		void	signForm(AForm &f);
+		void	executeForm(AForm const & form);
 
 		class GradeTooHighException : public std::exception
 		{
