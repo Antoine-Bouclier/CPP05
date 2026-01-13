@@ -5,6 +5,7 @@
 
 int main()
 {
+    srand(time(NULL));
     std::cout << "===== CREATION DES BUREAUCRATS =====" << std::endl;
     Bureaucrat boss("Boss", 1);
     Bureaucrat manager("Manager", 50);
