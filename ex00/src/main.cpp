@@ -9,7 +9,17 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what() << std::endl;
+	}
+
+	std::cout << "TEST 1: grade under 1" << std::endl;
+	try
+	{
+		Bureaucrat	b1("John", 0);
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
 	std::cout << "TEST 2: decrement grade" << std::endl;
@@ -21,7 +31,7 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
 	std::cout << "TEST 3: increment grade" << std::endl;
@@ -33,7 +43,7 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	
 	return (0);
