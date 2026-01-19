@@ -1,26 +1,26 @@
 #include "Form.hpp"
 
-Form::Form() : _name("default"), _sign_grade(15), _execute_grade(), _signed(false)
+Form::Form() : _name("default"), _signGrade(15), _executeGrade(), _signed(false)
 {
 	std::cout << this->_name << ": Default constructor called." << std::endl;
 }
 
 Form::Form(std::string name, unsigned int sign_grade, unsigned int execute_grade)
- : _name(name), _sign_grade(sign_grade), _execute_grade(execute_grade), _signed(false)
+ : _name(name), _signGrade(sign_grade), _executeGrade(execute_grade), _signed(false)
 {
 	std::cout << this->_name << ": Parameterized constructor called." << std::endl;
-	if (_sign_grade >= 150)
+	if (_signGrade >= 150)
 		throw GradeTooLowException();
-	else if (_sign_grade <= 1)
+	else if (_signGrade <= 1)
 		throw GradeTooHighException();
-	if (_execute_grade >= 150)
+	if (_executeGrade >= 150)
 		throw GradeTooLowException();
-	else if (_execute_grade <= 1)
+	else if (_executeGrade <= 1)
 		throw GradeTooHighException();
 }
 
 Form::Form(const Form &copy)
-: _name(copy._name), _sign_grade(copy._sign_grade), _execute_grade(copy._execute_grade), _signed(copy._signed)
+: _name(copy._name), _signGrade(copy._signGrade), _executeGrade(copy._executeGrade), _signed(copy._signed)
 {
 	std::cout << this->_name << ": Copy constructor called." << std::endl;
 }
@@ -39,12 +39,12 @@ std::string		Form::getName() const
 
 unsigned int	Form::getSignGrade() const
 {
-	return (this->_sign_grade);
+	return (this->_signGrade);
 }
 
 unsigned int	Form::getExecuteGrade() const
 {
-	return (this->_execute_grade);
+	return (this->_executeGrade);
 }
 
 bool			Form::getSigned() const
@@ -54,7 +54,7 @@ bool			Form::getSigned() const
 
 void	Form::beSigned(Bureaucrat b)
 {
-	if (b.getGrade() <= this->_sign_grade)
+	if (b.getGrade() <= this->_signGrade)
 		this->_signed = true;
 	else
 		throw	GradeTooLowException();

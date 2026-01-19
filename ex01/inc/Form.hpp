@@ -9,13 +9,13 @@ class Form
 {
 	private:
 		const std::string	_name;
-		const unsigned int	_sign_grade;
-		const unsigned int	_execute_grade;
+		const unsigned int	_signGrade;
+		const unsigned int	_executeGrade;
 		bool				_signed;
 	public:
 		/* -- Constructors -- */
 		Form();
-		Form(std::string name, unsigned int sign_grade, unsigned int execute_grade);
+		Form(std::string name, unsigned int signGrade, unsigned int executeGrade);
 		
 		/* -- Copy Constructor -- */
 		Form(const Form &copy);
