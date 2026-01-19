@@ -38,17 +38,17 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		std::ofstream file((this->getTarget() + "_shrubbery").c_str());
 
 		file << 
-			"		 &&" << std::endl <<
-			"	    &&&&" << std::endl <<
-			"	  &&&&&&&&" << std::endl <<
-			"   &&&&&&&&&&&&" << std::endl <<
-			"		&&&&" << std::endl <<
-			"	  &&&&&&&&" << std::endl <<
-			"	&&&&&&&&&&&&" << std::endl <<
-			" &&&&&&&&&&&&&&&&" << std::endl <<
-			"       ||||" << std::endl <<
-			"       ||||" << std::endl <<
-			"       ||||" << std::endl <<
+			"		 &&" << "\n" <<
+			"	    &&&&" << "\n" <<
+			"	  &&&&&&&&" << "\n" <<
+			"   &&&&&&&&&&&&" << "\n" <<
+			"		&&&&" << "\n" <<
+			"	  &&&&&&&&" << "\n" <<
+			"	&&&&&&&&&&&&" << "\n" <<
+			" &&&&&&&&&&&&&&&&" << "\n" <<
+			"       ||||" << "\n" <<
+			"       ||||" << "\n" <<
+			"       ||||" << "\n" <<
 		std::endl;
 
 		file.close();
