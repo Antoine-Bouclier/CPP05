@@ -42,7 +42,7 @@ AForm *Intern::makeForm(const std::string form, const std::string target)
 {
 	Intern		intern;
 	AForm*		(Intern::*ptr[])(const std::string target) = {&Intern::makeShrubbery, &Intern::makeRobotomy, &Intern::makePresidential};
-	std::string	name[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	std::string	name[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
 	int	i;
 	for (i = 0; i < 3; i++)

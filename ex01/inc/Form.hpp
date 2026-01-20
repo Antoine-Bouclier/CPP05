@@ -30,7 +30,7 @@ class Form
 		bool			getSigned() const;
 
 		/* -- Member function -- */
-		void	beSigned(Bureaucrat b);
+		void	beSigned(const Bureaucrat &b);
 
 		/* -- Destructor called. -- */
 		~Form();

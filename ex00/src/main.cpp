@@ -12,7 +12,7 @@ int	main(void)
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "TEST 1: grade under 1" << std::endl;
+	std::cout << "TEST 2: grade under 1" << std::endl;
 	try
 	{
 		Bureaucrat	b1("John", 0);
@@ -22,7 +22,7 @@ int	main(void)
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "TEST 2: decrement grade" << std::endl;
+	std::cout << "TEST 3: decrement grade" << std::endl;
 	try
 	{
 		Bureaucrat	b2;
@@ -34,7 +34,7 @@ int	main(void)
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	std::cout << "TEST 3: increment grade" << std::endl;
+	std::cout << "TEST 4: increment grade" << std::endl;
 	try
 	{
 		Bureaucrat	b3("Romain", 1);

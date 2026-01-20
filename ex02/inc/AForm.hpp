@@ -30,7 +30,7 @@ class AForm
 		bool			getSigned() const;
 
 		/* -- Member function -- */
-		void	beSigned(Bureaucrat b);
+		void	beSigned(const Bureaucrat &b);
 
 		/* -- Pure virtual function -- */
 		virtual void	execute(Bureaucrat const &executor) const = 0;
