@@ -1,4 +1,4 @@
-NAME		=	bureaucrat
+NAME		=	form
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -MMD -MP
 
@@ -32,6 +32,7 @@ fclean: clean
 	@if [ -f "$(NAME)" ]; then \
 		rm -f $(NAME); \
 	fi
+	@rm -f *_shrubbery
 
 re: fclean all
 
