@@ -1,26 +1,28 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("default")
 {
 	std::cout << this->_name << ": Default constructor called." << std::endl;
+	this->setGrade(150);
 }
 
-Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name)
 {
 	std::cout << this->_name << ": Parameterized Constructor called." << std::endl;
 	this->setGrade(grade);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name), _grade(copy._grade)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name)
 {
 	std::cout << this->_name << ": Copy Constructor called." << std::endl;
+	this->setGrade(copy._grade);
 }
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &src)
 {
 	std::cout << this->_name << ": Assignement operator called." << std::endl;
 	if (this != &src)
-		this->_grade = src._grade;
+		this->setGrade(src._grade);
 	return (*this);
 }
 
@@ -74,7 +76,7 @@ void	Bureaucrat::signForm(AForm &f)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr
+		std::cout
 			<< this->getName() << " couldn't sign "
 			<< f.getName() << " because "
 			<< this->getName() << " have a grade of "
@@ -98,7 +100,7 @@ void	Bureaucrat::executeForm(AForm const & form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 	
 }

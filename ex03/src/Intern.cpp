@@ -48,7 +48,10 @@ AForm *Intern::makeForm(const std::string form, const std::string target)
 	for (i = 0; i < 3; i++)
 	{
 		if (form.compare(name[i]) == 0)
+		{
+			std::cout << "Intern creates " << form << std::endl;
 			return ((intern.*ptr[i])(target));
+		}
 	}
 	std::cout << "Intern can not create a form called " << form << std::endl;
 	return (NULL);

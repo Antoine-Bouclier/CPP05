@@ -32,9 +32,10 @@ class AForm
 		/* -- Member function -- */
 		void	beSigned(Bureaucrat b);
 
+		/* -- Pure virtual function -- */
 		virtual void	execute(Bureaucrat const &executor) const = 0;
 
-		/* -- Destructor called. -- */
+		/* -- Destructor -- */
 		virtual ~AForm();
 
 		class GradeTooHighException : public std::exception
